@@ -35,6 +35,8 @@ export async function action({ request, params }) {
 
   if (response.status === 422 || response.status === 401) {
     console.log(response); // DEBUGGING
+    console.log(await response.json()); // DEBUGGING
+
     return response;
   }
 
@@ -49,7 +51,7 @@ export async function action({ request, params }) {
 
   // TODO: manage the token
 
-  console.log(response)
+  console.log(response); // DEBUGGING
   console.log(await response.json()); // DEBUGGING
 
   return redirect("/");

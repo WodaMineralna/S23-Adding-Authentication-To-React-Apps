@@ -1,9 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { useSubmit, NavLink } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
 import NewsletterSignup from "./NewsletterSignup";
 
 function MainNavigation() {
+  const submit = useSubmit();
+
+  function logoutHandler() {
+    submit(null, { method: "POST", action: "/logout" });
+    // console.log(localStorage?.getItem("token")); // DEBUGGING
+  }
+
   return (
     <header className={classes.header}>
       <nav>
@@ -48,6 +55,9 @@ function MainNavigation() {
             >
               Authentication
             </NavLink>
+          </li>
+          <li>
+            <button onClick={logoutHandler}>Logout</button>
           </li>
         </ul>
       </nav>

@@ -34,10 +34,12 @@ export async function action({ request, params }) {
   });
 
   if (response.status === 422 || response.status === 401) {
-    console.log(response); // DEBUGGING
-    console.log(await response.json()); // DEBUGGING
+    const data = await response.json();
 
-    return response;
+    console.log(response); // DEBUGGING
+    console.log(data); // DEBUGGING
+
+    return data;
   }
 
   if (!response.ok) {

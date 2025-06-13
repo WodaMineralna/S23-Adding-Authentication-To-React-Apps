@@ -53,8 +53,13 @@ export async function action({ request, params }) {
 
   // TODO: manage the token
 
+  const resData = await response.json();
+  const token = resData.token;
+
+  localStorage.setItem("token", token);
+
   console.log(response); // DEBUGGING
-  console.log(await response.json()); // DEBUGGING
+  console.log(resData); // DEBUGGING
 
   return redirect("/");
 }

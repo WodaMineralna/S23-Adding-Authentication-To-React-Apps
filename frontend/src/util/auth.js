@@ -16,4 +16,6 @@ export function checkAuthLoader() {
     // or we can just throw an error
     return redirect("/auth");
   }
+  
+  return null
 }

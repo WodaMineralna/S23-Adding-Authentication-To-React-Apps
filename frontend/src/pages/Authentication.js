@@ -51,12 +51,14 @@ export async function action({ request, params }) {
     );
   }
 
-  // TODO: manage the token
-
   const resData = await response.json();
   const token = resData.token;
 
+  const expiration = new Date();
+  expiration.setHours(expiration.getHours() + 1); // creates a date that is 1h in the future
+
   localStorage.setItem("token", token);
+  localStorage.setItem("expiration", expiration.toISOString());
 
   console.log(response); // DEBUGGING
   console.log(resData); // DEBUGGING

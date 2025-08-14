@@ -2,17 +2,17 @@
 
 Practice code for Section 23 - Adding Authentication to React Apps, part of the course "React - The Complete Guide (incl. Redux)" by Maximilian Schwarzmüller.
 
-This project covers
+This project covers:
 - Authentication flow and protected routes
 - Token storage and session refresh strategy
-Project type
-- Based on a guided project
+  
+# Project type
+Implemented as part of a guided course project, with additional features and customizations added independently.
 
 ## Tech Stack
 - React
 - JavaScript (ES6+)
 - Build tool - Create React App
-- Authentication
 - JWT
 ## How to Run
 
